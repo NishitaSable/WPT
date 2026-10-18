@@ -1,0 +1,29 @@
+Difference Between Let, and Var
+
+Difference and similarities Between Let, and  Const
+
+Why to use 'use strict'
+
+what is the use of Typeof
+
+Which operator is overloaded
+
+What is the default value if variable is not assign any value.
+
+Calculation between number and Undefined results into
+What is the default value returned by function.
+Explain following line  window.document.write()
+Is java script object oriented?
+List down predefined references [Object] in JS
+Which version you have learned?
+Why Js is called client side?
+is java script Dynamic? explain with examples.
+In java script parameter in function call and parameter in definition need to be same?
+Do we need to terminate statement using semicolon ; in JS
+Use of javascript?
+Tell me the frame works or libraries  build using JS
+How to get count of the given string.
+what is valueOf() in which class it is defined.
+
+
+

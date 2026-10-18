@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- post - body (payload, string or array use urlencoded)
+     req.body
+      -->
+
+    <!-- id,name,email,gender,salary create a collection of employee -->
+    <form action="http://127.0.0.1:8081/employee" method="POST">
+      Id:
+      <input type="text" name="id" />
+      <br />
+
+      Name:
+      <input type="text" name="name" />
+      <br />
+
+      Gender:
+      <input type="text" name="gender" />
+      <br />
+
+      Salary:
+      <input type="text" name="salary" />
+      <br />
+
+      <input type="submit" value="Submit" />
+    </form>
+    <script src="index.js"></script>
+  </body>
+</html>

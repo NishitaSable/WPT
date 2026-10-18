@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form>
+        <input type="button" id="btn"/>
+        <p id="pp">i am p tag</p>
+        <script src="index.js"></script>
+    </form> -->
+
+    <!-- enctype="multipart/form.data" -->
+    <!-- Query Strind Data - will go through url (get) -->
+    <!-- form Data is data sent as form fields, usually when submitting an HTML form using POST. -->
+    <!-- when we want to upload a file (POST) -->
+    <!-- <form enctype="application/x-www-form-urlencoded" action="index.html" method="post" onsubmit="return check()">            
+        <h1>Form</h1>
+        <label for="userid">User Id:</label><br>
+        <input type="text" id="userid" name="userid" required><br/>
+
+        <label for="Name">Name:</label><br>
+        <input type="text" id="Name" name="Name" required><br/>
+
+        <label for="Password">Password:</label><br>
+        <input type="text" id="Password" name="Password" required><br/>
+
+        <label for="Gender">Gender:</label><br>
+        <input type="radio" id="Male" name="Gender" value="Male" checked>
+        <label for="Male">Male</label>
+
+        <input type="radio" id="Female" name="Gender" value="Female">
+        <label for="Female">Female</label><br>
+
+        <label for ="Hobbies">Hobbies:</label><br>
+        <input type="checkbox" id="Reading" name="Hobbies" value="Reading" checked>
+        <label for="Reading">Reading</label><br>
+
+        <input type="checkbox" id="Dance" name="Hobbies" value="Dance">
+        <label for="Dance">Dance</label><br>
+
+        <input type="checkbox" id="Music" name="Hobbies" value="Music">
+        <label for="Music">Music</label><br>
+
+        <input type="submit" value="Submit" formnovalidate>
+        <input type="reset" value="Reset">
+        <button id="btn">Is it submitting</button>
+        <script src="index.js"></script>
+    </form> -->
+
+    <!-- <form name="frm" action="a.html" onsubmit="return true;">
+      name <input type="text" name="t1" />
+      <input type="button" value="copy" onclick="call()" />
+      copied name <input type="text" name="t2" />
+      <input type="submit" />
+    </form> -->
+
+    <!-- how to pass form to function -->
+    <!-- <p id="pp"></p>
+    <form>
+      <input type="radio" name="rd" value="good" />good
+      <input type="radio" name="rd" value="better" />better
+      <input type="radio" name="rd" value="best" />best
+      <input type="button" value="click" onclick="call(this.form)" />
+    </form> -->
+
+
+
+    <!-- How to read value of radio button and checked keyword -->
+    <!-- <p id="pp"></p>
+    <form name="frm">
+      <input type="radio" name="rd" value="yes" />yes
+      <input type="radio" name="rd" value="no" checked />no
+      <input type="button" value="read" onclick="readradio()" />
+      <input type="button" value="chk" onclick="cc()" />
+    </form> -->
+
+
+
+
+    <!-- How to read selected value of dropdown -->
+
+    
+    <p id="pp"></p>
+    <form name="frm">
+        <select name="s1" onchange="readradio()">
+            <option value="0">dance</option>
+            <option value="1">music</option>
+            <option value="2">sports</option>
+        </select>
+        <input disabled name="t"/>
+        <input type="button" value="read" onclick="readradio()">
+    </form>
+    <script src="index.js"></script>
+  </body>
+</html>

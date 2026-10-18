@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Q1. Create three textbox and two radio button [+ ,*] 
+     On click of radio button result of operation should be displayed in third text box give basic validation. -->
+
+    <!-- <form name="frm">
+    Number 1:<input type="text" name="n1">
+    <br><br>
+    Number 2:<input type="text" name="n2">
+    <br><br>
+    Result:<input type="text" name="result" readonly>
+    <br><br>
+    <input type="radio" name="op" value="+" onclick="calculate()">+
+    <input type="radio" name="op" value="*" onclick="calculate()">*
+</form> -->
+
+
+    <!-- Q2. create 3 check box displaying book name and price, 
+    as per selection of user,  display total amount of book purchased in a disabled text box. -->
+
+    <!-- <form name="frm">
+    <h3>Select Books</h3>
+    <input type="checkbox" name="book" value="500" onclick="calculate()">Java - ₹500
+    <br>
+    <input type="checkbox" name="book" value="400" onclick="calculate()">Python - ₹400
+    <br>
+    <input type="checkbox" name="book" value="300" onclick="calculate()">C++ - ₹300
+    <br><br>
+    Total Amount:<input type="text" name="total" disabled>
+</form> -->
+
+
+<!-- Q3. create  a dropdown list displaying  state on change of it  display selected state in a textbox. -->
+<!-- <form name="frm">Select State:
+    <select name="state" onchange="readState()">
+        <option value="">--Select State--</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Rajasthan">Rajasthan</option>
+    </select>
+    <br><br>
+    Selected State:
+    <input type="text" name="result" readonly>
+</form> -->
+
+
+    <!-- Q4. create 3 textbox and a dropdown list displaying mathematical operation. 
+    On click of button it should display result in 3rd text box -->
+
+    <!-- <form name="frm">
+    Number 1:<input type="text" name="n1">
+    <br><br>
+    Number 2:<input type="text" name="n2">
+    <br><br>
+    Operation:
+    <select name="op">
+        <option value="+">Addition</option>
+        <option value="-">Subtraction</option>
+        <option value="*">Multiplication</option>
+        <option value="/">Division</option>
+    </select>
+    <br><br>
+    Result:<input type="text" name="result" readonly>
+    <br><br>
+    <input type="button" value="Calculate" onclick="calculate()">
+</form> -->
+
+
+
+
+    <!-- Q6. Create a web page for entering all personal details Information should containName, 
+    Date of Birth (use select drop down list), Gender, Address, Ps. No. , 
+    batch No. and Date of Joining (use select drop down list) Validate this form -->
+
+    <!-- <form name="frm" onsubmit="return validate()">
+    <h2>Personal Details</h2>    
+    Name:
+    <input type="text" name="name">
+    <br><br>    
+    Date of Birth:
+    <select name="dobDay">
+        <option value="">Day</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+        <option>21</option>
+        <option>22</option>
+        <option>23</option>
+        <option>24</option>
+        <option>25</option>
+        <option>26</option>
+        <option>27</option>
+        <option>28</option>
+        <option>29</option>
+        <option>30</option>
+        <option>31</option>
+    </select>
+
+    <select name="dobMonth">
+        <option value="">Month</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+    </select>
+
+    <select name="dobYear">
+        <option value="">Year</option>
+        <option>2000</option>
+        <option>2001</option>
+        <option>2002</option>
+        <option>2003</option>
+        <option>2004</option>
+        <option>2005</option>
+        <option>2006</option>
+    </select>
+    <br><br>    
+    Gender:
+    <input type="radio" name="gender" value="Male">
+    Male
+    <input type="radio" name="gender" value="Female">
+    Female
+    <br><br>    
+    Address:
+    <br>
+    <textarea name="address" rows="4" cols="30"></textarea>
+    <br><br>    
+    PS. No.:
+    <input type="text" name="psno">
+    <br><br>   
+    Batch No.:
+    <input type="text" name="batch">
+    <br><br>    
+    Date of Joining:
+    <select name="joinDay">
+        <option value="">Day</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+        <option>21</option>
+        <option>22</option>
+        <option>23</option>
+        <option>24</option>
+        <option>25</option>
+        <option>26</option>
+        <option>27</option>
+        <option>28</option>
+        <option>29</option>
+        <option>30</option>
+        <option>31</option>
+    </select>
+
+    <select name="joinMonth">
+        <option value="">Month</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+    </select>
+
+    <select name="joinYear">
+        <option value="">Year</option>
+        <option>2023</option>
+        <option>2024</option>
+        <option>2025</option>
+        <option>2026</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>  -->
+
+
+
+<!-- Q7. Display digital clock -->
+<h2 id="clock"></h2>
+
+<script src="task.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- enumerable - iterable -->
+
+     <!-- named function gets hoisted
+     Anonymous function does not get hoisted -->
+    <!-- <script>
+        'use strict'
+        let obj = new person("ABH",67)
+        
+        function person(nm,ag)
+        {
+            this.name=nm
+            this.age=ag
+
+            this.job=function(){
+                document.write("do === job <br/>")
+            }
+        }
+        obj.job()
+        document.write("<hr/>")
+        for(let prop in obj){
+            if(typeof obj[prop] == 'function')
+            obj[prop]()
+        document.write(prop+""+obj[prop])
+        document.write("<hr/>")
+        }
+    </script> -->
+
+
+
+    <!-- Class Expression------------------------------
+
+
+    sayHi() - this is prototype function (i.e accessible to child class) -->
+
+    <!-- in JS class is a function -->
+
+    <!-- <script>
+        //Q)  create a class acc having member variable id,name , 
+        // balance create a method deposit and withdraw
+        // which will increase and reduce balance resp.
+
+        'use strict'
+        class Account{
+            constructor(id,name,balance){
+                this.id=id
+                this.name=name
+                this.balance=balance
+
+                alert(typeof this.constructor)
+            }
+            deposit(amount){
+                this.balance+=amount
+            }
+            withdraw(dec){
+                if(amount<=this.balance){
+                    this.balance=this.balance-amount
+                }
+                else {
+            document.write("Insufficient balance");
+                }
+            }
+            toString(){
+                return this.id+""+this.name+""+this.balance
+            }
+        }
+        var obj1 = new Account(1,"RAJ",50000)
+        console.log(obj1)
+        document.write(obj1)
+        console.log(obj1)
+
+        var obj2 = new Account(2,"TGUS",6789)
+        console.log(obj2) -->
+ <!-- </script> -->
+
+
+
+        <!-- // Q) write toString method to display name and balance create 
+        // 3 obj of acc class and do the transaction -->
+
+
+
+
+
+
+
+<!-- <script>
+        // ---------------------------Getter Setter Property
+        // to modify existing property we need setter
+
+        // when we assign it will call setter
+        // when we read it will call getter
+
+        'use strict'
+        class Account{
+            constructor(name,amt){ 
+                this.Aname=name
+                this.Abalance=amt
+            }
+            get Aname(){
+                return this._name
+            }
+            set Aname(value){
+                this._name=value
+            }
+
+            get Abalance(){
+                return this._balance
+            }
+            set Abalance(value){
+                this._balance=value
+            }
+
+            deposit(amt){
+                this.Abalance=this.Abalance+amt
+            }
+            toString(){
+                //calling get
+                return this.Aname+" "+this.Abalance
+            }
+        }
+
+        var obj1 = new Account("MONA",8990900)
+        console.log(obj1)
+        document.write(obj1)
+        obj1.Aname="geeta" //calling set
+
+        console.log(obj1._name)
+        document.write(obj1)
+        document.write(obj1.Aname)
+        obj1.deposit(2899)
+    </script> -->
+
+
+
+    <!-- --------------------------------Inheritance--------------------------------- -->
+        <!-- instance member do not get inherited in JS -->
+
+
+    <!-- --------------------------------Abstract Class--------------------------------- -->
+    <!-- new.target - from where your coming
+    it will give entire class function defination -->
+
+<!-- <script>
+
+'use strict'
+
+class Account {
+
+    constructor(fname, lname, amt) {
+
+        alert(new.target);
+
+        if (new.target == Account) {
+            throw new TypeError("Cannot construct Abstract instance directly");
+        }
+
+        this.fname = fname;
+        this.lname = lname;
+        this.balance = amt;
+    }
+
+    set firstname(value) {
+        this.fnm = value;
+    }
+
+    get firstname() {
+        return this.fnm;
+    }
+
+    set balance(value) {
+        this.bal = value;
+    }
+
+    get balance() {
+        return this.bal;
+    }
+
+    set lastname(value) {
+        this.lnm = value;
+    }
+
+    get lastname() {
+        return this.lnm;
+    }
+
+    deposit(amt) {
+        this.balance += amt;
+    }
+
+    toString() {
+        return this.firstname + " " +
+               this.lastname + " " +
+               this.balance;
+    }
+}
+
+
+class Savingaccount extends Account {
+
+    constructor(acctype, fname, lname, amt) {
+
+        super(fname, lname, amt);
+
+        this.type = acctype;
+    }
+
+    withdraw(amt) {
+
+        const minbal = 100;
+
+        if (amt > (this.balance - minbal)) {
+            throw new TypeError("Minimum balance should be 100");
+        }
+
+        this.balance -= amt;
+    }
+}
+
+
+    var Aobj = new Account("Raj", "Mathur", 2000);
+// This will give error because Account is abstract-like.
+
+var obj = new Savingaccount("sav", "Raj", "Mathur", 2000);
+
+obj.deposit(2000);
+
+document.write(obj + "<br>");
+
+obj.withdraw(3000);
+
+document.write(obj);
+</script> -->
+
+
+
+
+<!-- -----------------------------------------Binding-------------------------------- -->
+
+<!-- <script>
+    const module={
+        x: 42,
+        getX: function(){
+            alert(this.constructor.name)
+            return this.x
+        }
+    };
+    const unboundGetX = module.getX
+    console.log(unboundGetX())
+
+    const boundGetX = unboundGetX.bind(module) //undefined
+    console.log(boundGetX())
+
+    console.log(module.getX.call(module)) //42
+</script> -->
+
+
+
+
+
+                            <!-- ----------------priv_pro_member--------------------- -->
+
+<!-- # -private member
+_ protected member for protected we follow convention we can use outside the class-->
+<!-- when we create obj internally it call toString method -->
+
+<script>
+'use strict'
+
+class Account {
+
+    #firstname;
+    #lastname;
+    #balance;
+    #id;
+
+    static #aid = 0;
+
+    constructor(fname, lname, amt) {
+        this.fname = fname;
+        this.lname = lname;
+        this._cbalance = amt;
+
+        this.#id = ++Account.#aid;
+    }
+
+    set firstname(value) {
+        this.#firstname = value;
+    }
+
+    get firstname() {
+        return this.#firstname;
+    }
+
+    set _cbalance(value) {
+        this.#balance = value;
+    }
+
+    get _cbalance() {
+        return this.#balance;
+    }
+
+    set lastname(value) {
+        this.#lastname = value;
+    }
+
+    get lastname() {
+        return this.#lastname;
+    }
+
+    get gid() {
+        return this.#id;
+    }
+
+    deposit(amt) {
+        this._cbalance += amt;
+    }
+
+    toString() {
+        return this.gid + " " +
+               this.firstname + " " +
+               this.lastname + " " +
+               this._cbalance;
+    }
+}
+
+
+class Savingaccount extends Account {
+
+    type;
+
+    constructor(acctype, fname, lname, amt) {
+        super(fname, lname, amt);
+        this.type = acctype;
+    }
+
+    withdraw(amt) {
+
+        const minbal = 1000;
+
+        if (amt > (this._cbalance - minbal)) {
+            throw new TypeError("Minimum balance should be 1000");
+        }
+
+        this._cbalance = this._cbalance - amt;
+    }
+}
+
+
+var obj = new Savingaccount("sav", "Raj", "Mathur", 2000);
+
+obj.deposit(3000);
+
+document.write(obj.firstname + "<br>");
+
+obj.withdraw(500);
+
+document.write(obj+ "<br>");
+
+console.log(obj);
+// obj.gid=101
+</script>
+
+</body>
+</html>

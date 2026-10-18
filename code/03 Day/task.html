@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Create  abstract class Employee having private variable id, name, salary, netsalary.
+Declare getter setter for name ➔ minimum length=4 max=15
+Id is auto increment➔ write only getter
+Declare salary and netsalary getter setter as protected
+Declare calculate_netsalary method which will deduct TDS and set netsalary.
+Create 2 child class permanentemp and contractemp
+It has givebonus method which will increase salary.
+In permanentemp  give bonus 10 % in contractemp  give bonus 5%.
+Create 2 object and print name and netsalary using toString.
+Asson as you load application it should print name of Company.
+Declare static TDS=0.1; -->
+<!-- <script>
+'use strict'
+
+class Employee {
+
+    static #eid = 0
+    static #TDS = 0.1
+
+    #id
+    #name
+    #salary
+    #netsalary
+
+    constructor(nm, sal) {
+
+        // Abstract class
+        if (new.target === Employee) {
+            throw new TypeError("Cannot construct Employee")
+        }
+
+        this.name = nm
+        this.salary = sal
+
+        // Auto increment ID
+        this.#id = ++Employee.#eid
+    }
+
+    // ID - getter only
+    get id() {
+        return this.#id
+    }
+
+    // Name getter
+    get name() {
+        return this.#name
+    }
+
+    // Name setter
+    set name(value) {
+
+        if (value.length >= 4 && value.length <= 15) {
+            this.#name = value
+        }
+        else {
+            throw new TypeError("Name must be between 4 and 15 characters")
+        }
+    }
+
+    // Salary getter
+    get salary() {
+        return this.#salary
+    }
+
+    // Salary setter
+    set salary(value) {
+        this.#salary = value
+    }
+
+    // Net salary getter
+    get netsalary() {
+        return this.#netsalary
+    }
+
+    // Net salary setter
+    set netsalary(value) {
+        this.#netsalary = value
+    }
+
+    // Calculate net salary
+    calculate_netsalary() {
+
+        this.netsalary =
+            this.salary - (this.salary * Employee.#TDS)
+    }
+
+    // toString
+    toString() {
+        return this.name + " " + this.netsalary
+    }
+}
+
+
+// Permanent Employee
+class permanentemp extends Employee {
+
+    givebonus() {
+
+        this.salary =
+            this.salary + (this.salary * 0.10)
+    }
+}
+
+
+// Contract Employee
+class contractemp extends Employee {
+
+    givebonus() {
+
+        this.salary =
+            this.salary + (this.salary * 0.05)
+    }
+}
+
+
+// Create objects
+let emp1 = new permanentemp("RAJESH", 40000)
+
+let emp2 = new contractemp("ANSH", 50000)
+
+
+// Give bonus
+emp1.givebonus()
+emp2.givebonus()
+
+
+// Calculate net salary
+emp1.calculate_netsalary()
+emp2.calculate_netsalary()
+
+
+// Print using toString
+console.log(emp1.toString())
+console.log(emp2.toString())
+
+
+// Print ID
+console.log("Employee 1 ID =", emp1.id)
+console.log("Employee 2 ID =", emp2.id)
+
+</script> -->
+
+
+
+
+<!-- Create  abstract class Account having private variable id, name, balance.
+Declare getter setter for name ➔ minimum length=4 max=15
+Id is auto increment➔ write only getter
+Declare balance getter setter as protected
+Declare deposit method which will increase balance
+Create 2 child class saving and current
+It has withdraw method which will reduce balance.
+In saving –ve balance not allowed in current –ve balane allowed.
+Create 2 object and print name and balance using toString.
+Asson as you load application it should print name of bank.
+Declare static method payinterest(accountholder) which will give interest to account holder and increase balance.
+Declare static interest=0.06; -->
+
+
+<script>
+         'use strict'
+        //
+        class Account {
+           static #bank_name ="Vita_Bank"
+            static{
+                document.write("<hr>"+ this.#bank_name)
+            }
+
+            #name;
+            #balance;
+            #account_id
+
+            static #id = 0;
+            constructor(name,amount){
+                alert(new.target)
+
+                if(new.target === Account){
+                    throw new TypeError("You cant create object of Account class")
+                }
+
+                this.set_name =  name;
+                this._set_balance = amount;
+                this.#account_id = ++Account.#id;
+            }
+
+            set _set_balance(value){
+                this.#balance = value;
+            }
+
+           set set_name(value){
+                if(value.length <4 || value.length>15){
+                    throw new TypeError("Invalid name...")
+                }
+                this.#name = value;
+            }
+
+           get get_balance(){
+                return this.#balance;
+            }
+
+            get your_id(){
+             return this.#account_id;
+             }
+
+            deposit(amt){
+                this.#balance = this.#balance + amt;
+            }
+
+            toString(){
+                return this.#account_id+" "+this.#name+" "+this.#balance;
+            }
+        }
+
+        class Saving_Account extends Account{
+            type;
+            constructor(acc_type,name,amount){
+                super(name,amount)
+                this.type = acc_type;
+            }
+
+            withdraw(amt){
+                if(amt > this.get_balance ){
+                    throw new TypeError("insufficient balance...")
+                }
+               this._set_balance = this.get_balance  - amt ;
+            }
+        }
+
+        class Current_Account extends Account{
+            type;
+            constructor(acc_type,name,amount){
+                super(name,amount)
+                this.type = acc_type;
+            }
+
+            withdraw(amt){
+                this._set_balance = this.get_balance  - amt ;
+            }
+
+        }
+
+
+        let  acc1 = new Current_Account("curr","kutta",9999);
+        document.write("<hr>"+acc1);
+        acc1.deposit(2000);
+        acc1.withdraw(399);
+        document.write("<hr>"+acc1);
+        
+
+        let  acc2 = new Saving_Account("sav","manjar",6999);
+        document.write("<hr>"+acc2);
+        acc2.deposit(2000);
+        acc2.withdraw(399);
+        document.write("<hr>"+acc2);         
+    </script>
+
+</body>
+</html>

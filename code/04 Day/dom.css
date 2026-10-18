@@ -1,0 +1,15 @@
+.mystyle {
+    width: 500px;
+    height: 50px;
+}
+
+.anotherClass {
+    background-color: bisque;
+}
+
+.myClass {
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    margin-bottom: 10px;
+}

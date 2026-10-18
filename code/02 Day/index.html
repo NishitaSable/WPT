@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        // 'use strict'
+        function person(nm,marks){
+            alert(this)
+            this.nm=nm
+            this.marks=marks
+        }
+        person("raj",70);
+        document.write(window.name);
+        document.write(window.marks)
+        console.log(window)
+    </script> -->
+
+
+    <!-- <script>
+        'use strict'
+        function person(nm,mks){
+            alert(this)
+            this.name=nm
+            this.marks=mks
+        }
+        var ob = new person("mona",80)
+        document.write("<br/>"+ob)
+        document.write(ob.constructor)
+        document.write("<hr/>")
+
+        var cpy = ob
+        document.write(ob.name+ "" +ob["name"])
+        document.write(cpy.name+ "" +cpy["name"])
+
+        cpy.name="geeta"
+        document.write("<hr/>")
+
+        for(let pp in ob)
+        document.write(pp+ "" +ob[pp])
+        document.write(ob instanceof person)
+        document.write(ob instanceof Object)
+
+
+    //    primitve type of data = deep copy
+    //reference type of data = shallow copy
+
+
+
+    </script> -->
+
+
+<!-- function call passing reference
+    <script>
+
+        let s = function(a){
+            return a*a
+        }
+
+        let c = function(a){
+            return a*a*a
+        }
+
+        var go = function(w,d){
+            alert(w(d))
+        }
+
+        let ans = go(c,2)
+        document.write(ans)
+    </script> -->
+
+
+
+    <!-- function call passing function definition
+    <script>
+        var go=function(w){
+            alert(w(5))
+        }
+
+    </script> -->
+
+
+
+    <!-- Anonymous Function without reference (Self Invoking Function)
+
+    IIFE - Immediate Invocation Function Expression 
+    on page load if we want to do some job use IIFE -->
+
+    <!-- <script>
+        (function()
+        {alert("this is a string");}()
+    )
+    </script> -->
+
+
+    <!-- <script>
+        var r = (function(a){
+            return a*a;
+        }(5))
+        document.write(r)
+    </script> -->
+
+
+
+    <!-- Q) accept a no. from the user and return true if no. is even using lambda exp. -->
+    <!-- <script>
+        let a = (n) => n%2 ===0
+        let n = Number(prompt("Enter number"))
+        document.write(a(n))
+
+    </script> -->
+
+
+
+     <!-- Q) accept a no. and print square of no. using lambda exp -->
+     <!-- <script>
+        let a = (n) => n*n 
+        let n = Number(prompt("Enter number"))
+        document.write(a(n))
+     </script> -->
+
+
+    <!-- Q) find factorial of a number
+        <script>
+        let result = (n) =>{
+            let f=1
+            for(let i=2;i<=n;i++)
+            f=f*i
+            return f
+        }
+        console.log(result(5))
+     </script> -->
+
+
+    <!-- Q) accept a no.from user and print all its factor using lambda statement -->
+     <!-- <script>
+        let fact = (n) =>{
+            for(let i=1;i<=n;i++){
+                if(n%i==0){
+                    console.log(i)
+                }
+            }
+        }
+        console.log(fact(12))
+     </script> -->
+
+
+     <!-- IIFE () -->
+     <!-- function defination can return function defination -->
+     <!-- inner function remembers and can access variables from its outer function this is 
+     closure -->
+     <!-- Closures are often used to create private variables. -->
+
+     <!-- Outer function
+      ↓
+    local variable
+      ↓
+    Inner function
+      ↓
+remembers outer variable
+      ↓
+     CLOSURE -->
+
+     <!-- -------Closure -->
+
+     <!-- <script>
+        let plus = function(){
+            var counter = 0
+            return function () {
+                return counter += 1
+            }
+        }()
+        document.write(plus())
+        document.write(plus())
+     </script> -->
+
+
+
+
+     <!-- <script>
+        obj={
+            fname: "Raj",
+            Iname: "Mathur",
+            age: 54,
+            add: {d:"Juhu"},
+            fullname: function(){
+                return this.fname+ "" +this.Iname;
+            },
+            toString: function()
+            {
+                return this.fullname() + "" + this.age + "" + this.add.d;
+            }
+        }
+        var f=obj.fullname();
+        document.write(f + "<br>");
+        document.write(obj + "<br>");
+        document.write(obj.toString() + "<br>");
+     </script> -->
+
+
+
+     <!-- <script>
+        'use script'
+        function person(nm,ag){
+            if(this instanceof person){
+                this.name=nm
+                this.age=ag
+                this.speak=function(){
+                    return "hello"
+                }
+                alert(this.constructor) 
+                return this;
+            }
+            else
+            throw new TypeError("Check this is not a fuunction");
+        }
+        person.prototype.display=function(){
+            return "parent classmethod data";
+        }
+        person.prototype.toString=function(){
+            return this.name+" "+this.age
+        }
+        var obj1=new person("raj",80)
+        console.log(obj1)
+        document.write(obj1)
+        var x=new person("mona",90)
+        console.log(x)
+        document.write(x)
+
+        //chile class
+        function child(){
+
+        }
+        child.prototype=Object.create(person.prototype)
+
+
+
+        var c = new child()
+        console.log(c.display())
+        document.write(c)
+        document.write(c.display())
+     </script> -->
+
+
+
+
+     <!-- <script>
+        let arr = new Array()
+        arr[0]=1;
+        arr[1]="vita";
+        arr[2]='g';
+        arr[3]=20.5
+        alert(arr.length)
+
+        for(let i=0;i<arr.length;i++)
+        document.write("<br>"+arr[i])
+
+        document.write("<hr/>")
+
+        //override toString()
+        document.write("<br/>"+arr)
+
+        document.write("<hr/>")
+
+        for(let list of arr)//in array use of to iterate
+        document.write("<br/>"+list)
+
+        
+     </script> -->
+    
+
+
+
+     <!-- <script>
+        var za = [2,4,5,62,2,8]
+        document.write("<hr/>"+za)
+
+        //defined size is 2 still we can add as many element as we want
+        var aa = new Array(2)
+        aa[0]=11;
+        aa[1]=90;
+        aa[2]=21
+
+        document.write("<hr/>"+aa)
+     </script> -->
+
+
+
+     <!-- when we use in keyword it read value as key i.e member of a class-->
+      <!-- when we use of it iterates in an array -->
+
+
+      <!-- <script>
+        let arr = []
+        arr[0]=8
+        arr[1]=7
+        document.write(arr)
+
+        document.write("<hr/>")
+
+        for(let e in arr)
+        document.write(arr[e])
+
+        document.write("<hr/>")
+        for(let e of arr)
+        document.write(e)
+
+        //remove undefined
+        for(let e of arr)
+        if(e)
+        document.write(e)
+      </script> -->
+
+
+
+
+      <!-- Array map() -->
+      <script>
+        const arr1 = [122,34,53]
+        const map1=arr1.map(x=> "<b>" +x+ "<b>")
+            document.write(map1)
+      </script>
+
+
+
+      <!-- filter()
+      map()
+      join() -->
+</body>
+</html>

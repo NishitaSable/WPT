@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// Q.3
+// Create a form with userid(min length is 4 max length is 15) and it should not have any special symbol
+// and password (min length is 8 and max length is 15)
+// and email, ensure user entered correct email and last is mobile no, and ensure user entered 10 digit number and 
+// last is address texearea (min 5 and max 35 characters allowed)
+// create submit and the reset button , do proper validation , if data is valid 
+// then only submit button should work 
+
+    </script>
+
+    <form onsubmit="return validate_form()">
+
+        <label>User id : </label>
+        <input type="text" id="user_id" oninput="validate_user_id()">
+        <br>
+        <span id="user_id_span" style="color:red"></span>
+        <br>
+
+        <label>Phone Number : </label>
+        <input type="text" id="phone_no" oninput="validate_phone()">
+        <br>
+        <span id="phone_no_span" style="color:red"></span>
+        <br>
+        
+        <label>Password : </label>
+        <input type="password" id="password" oninput="validate_password()">
+        <br>
+        <span id="password_span" style="color:red"></span>
+        <br>
+
+        <label>Email : </label>
+        <input type="email" id="email" oninput="validate_email()">
+        <br>
+        <span id="email_span" style="color: red;"></span>
+        <br>
+
+        <label>Address : </label>
+        <input type="text" id="address" oninput="validate_address()">
+        <br>
+        <span id="address_span" style="color:red"></span>
+        <br>
+
+        <button type="submit">Submit</button>
+        <br>
+        <button type="reset">Reset</button>
+        <br>
+
+
+    </form>
+
+    <script>
+        function validate_user_id(){
+            let user_id = document.getElementById('user_id').value;
+
+            let pattern = /^[a-zA-Z0-9]+$/
+
+             if(user_id ===""){
+                  document.getElementById('user_id_span').innerHTML ="Id cant  be empty";
+            }else if(!pattern.test(user_id)){
+                document.getElementById('user_id_span').innerHTML ="Id must include alphanumeric values...";
+            }else if(user_id.length<4 || user_id.length>15){
+                document.getElementById('user_id_span').innerHTML ="Id cant be less than 4 and more than 15"
+            }else{
+                 document.getElementById('user_id_span').innerHTML =""
+            }
+        }
+
+        function validate_phone(){
+            let phone = document.getElementById('phone_no').value;
+
+            let pattern = /^[0-9]{10}$/
+
+            if(phone ===""){
+                document.getElementById('phone_no_span').innerHTML = "Phone number cant be empty..";
+
+            }else if(!pattern.test(phone)){
+                 document.getElementById('phone_no_span').innerHTML = "Phone Number can have only number value...";
+            }else if(phone.length !== 10){
+                 document.getElementById('phone_no_span').innerHTML = "u must enter 10 digit phone number";
+            }else{
+                 document.getElementById('phone_no_span').innerHTML =""
+            }
+        }
+
+        function validate_password(){
+            let password = document.getElementById('password').value;
+
+            if(password ===""){
+                document.getElementById('password_span').innerHTML="Password cant be empty..";
+
+            }else if(password.length < 8 || password.length > 15){
+                 document.getElementById('password_span').innerHTML="Password must cant be less than 8 and more than 15";
+            }else {
+                document.getElementById('password_span').innerHTML="";
+            }
+        }
+
+        function validate_email(){
+            let email = document.getElementById("email").value;
+
+            if(email===""){
+                document.getElementById("email_span").innerHTML="email cant be null"
+            }else {
+                document.getElementById("email_span").innerHTML=""
+            }
+        }
+
+        function validate_address(){
+            let address = document.getElementById("address").value;
+
+            if(address ===""){
+                document.getElementById("address_span").innerHTML="address cant be null..";
+
+            }else if(address.length<8 || address.length>35){
+                document.getElementById("address_span").innerHTML="address cant be less than 8 and more than 35";
+            }else{
+                document.getElementById("address_span").innerHTML=""
+            }
+        }
+
+
+        function validate_form(){
+
+            let user_id = document.getElementById('user_id').value;
+            let phone = document.getElementById('phone_no').value;
+            let password = document.getElementById('password').value;
+            let email = document.getElementById("email").value;
+            let address = document.getElementById("address").value;
+
+            let pattern_id = /^[a-zA-Z0-9]+$/
+            let pattern_number = /^[0-9]{10}$/
+
+            if(user_id===""){
+                alert("user id cant be empty...")
+                return false;
+            }
+
+            if(!pattern_id.test(user_id)){
+                alert("id must be alpha numeric value..")
+                return false;
+            }
+
+            if(user_id.length <4 || user_id.length > 15){
+                alert("user id cant be less than 4 and greater than 15");
+                return false;
+            }
+
+
+
+            if(phone === ""){
+                alert("phone number cant be null");
+                return false;
+            }
+
+            if(!pattern_number.test(phone)){
+                alert("Enter only numeric values...")
+                return false;
+            }
+
+            if(phone.length !== 10){
+                alert("phone no must contain 10 number ");
+                return false;
+            }
+
+
+
+            if(password ===""){
+                alert("password cant be null");
+                return false;
+            }
+
+            if(password.length < 8 || password.length > 15){
+                alert("password cant be less than 8 and more than 15");
+                return false;
+            }
+
+            if(email===""){
+                alert("email cant be null");
+                return false;
+             }
+
+
+             if(address ===""){
+                alert("address cant be null");
+                return false;
+             }
+
+             if(address.length<8 || address.length>35){
+                alert("address cant be less than 8 and more than 35");
+                return false;
+             }
+                    
+             alert("form submmitedd successfully...")
+             return true;
+        }
+
+
+
+    </script>
+</body>
+</html>

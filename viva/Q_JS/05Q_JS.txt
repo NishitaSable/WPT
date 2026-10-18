@@ -1,0 +1,17 @@
+Which is the fastest selector in DOM
+What is DOM
+How to get collection of all classes given in  a perticular tag
+How to add css class dynamically to a particular tag
+How to remove css class dynamically to a perticular tag
+How to replace one css class with another to a perticular tag
+How to replace content of a particular tag 
+How to toggle the CSS class 
+How to change HTML Attribute dynamically
+How to read HTML Attribute dynamically
+nodeName of Document, text, element 
+How to read value vita using DOM
+<p id="pr">welcome to <b> VITA</b></p>
+How to read value of textbox with id="INP"
+
+
+

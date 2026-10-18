@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c1{color: red;}
+    </style>
+    <script>
+        document.write("hello")
+    </script>
+</head>
+<body>
+    <h1>Head-------main page </h1>
+    <script>
+        // let a =10
+        // document.write(a+"<br/>");
+        // var b
+        // document.write(b+"<br/>");
+        // const c = 12
+        // document.write(c+"<br/>");   
+        // // document.write(z);  
+        // n=5;
+        // document.write("</br>"+n); 
+        
+        // 'use strict'
+        // a = 5;
+        // document.write(a+"<br />");
+
+
+        // document.write("<b class = 'c1'>main section </b>");
+        // document.write("<hr/>");
+        // console.log(document);
+        // console.log(window);
+
+
+        // var a = 5;
+        // document.write(typeof(a));
+
+        // var aa=5.5;
+        // document.write(typeof(aa))
+
+        // var x = "5" + 7;
+        // console.log(x);
+
+        // var p = "3"
+        // // document.write(p.valueOf())
+        // console.log(p.valueOf())
+
+        // for(let i=1;i<=3;i++){
+        //   document.write(i);
+        // }
+        //   document.write(i);
+
+        // var i;
+        // for(i=1;i<=3;i++){
+        // document.write(i)
+        // }
+        // document.write(i)
+        
+        // ---------------------------let,var and const are keyword
+
+        const MY_OBJECT = {'key': 'value'};
+        document.write(MY_OBJECT);  //object Object. //document.write use toString method
+        document.write("<br />"+MY_OBJECT.toString());  //value
+        console.log(MY_OBJECT);
+        MY_OBJECT.key = 'new value';  //this is allowed
+        MY_OBJECT.newname = 'MONA';
+
+        console.log(MY_OBJECT);  //updated value will be used
+        MY_OBJECT = {'key':'new value'};  //TypeError
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>document.write("hello")</script>
+</head>
+<body>
+    <script>
+        function person(nm, mks) {
+            // alert(this);
+
+            this.name = nm;
+            this.mks = mks;
+        }
+
+        // Creating object
+        var ob = new person("mona", 80);
+        document.write(ob);
+        document.write(this.constructor);
+        document.write("<hr />");
+        document.write(ob.name + " " + ob["name"]);
+        document.write("<hr />");
+        for (let pp in ob) {
+            document.write(pp + " " + ob[pp] + "<br>");
+        }
+        document.write(ob instanceof person);
+        document.write("<br>");
+        document.write(ob instanceof Object);
+        var ob1 = new person("gyu", 1000);
+        console.log(person.length);
+        console.log(ob.length);
+    </script>
+
+</body>
+</html>
+
+
+<!-- method overloading is not allowed because JS is dynamically typed -->
